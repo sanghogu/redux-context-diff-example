@@ -4,6 +4,8 @@ import './App.css';
 import ReduxMode from "./_redux/ReduxMode";
 import ContextMode from "./_context/ContextMode";
 import RecoilMode from "./_recoil/RecoilMode";
+import JotaiMode from "./_jotai/JotaiMode";
+import ZustandMode from "./_zustand/ZustandMode";
 
 function App() {
   return (
@@ -13,6 +15,10 @@ function App() {
       <ContextMode/>
 
       <RecoilMode/>
+
+      <JotaiMode/>
+
+      <ZustandMode/>
     </div>
   );
 }
