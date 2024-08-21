@@ -1,23 +1,23 @@
-import React, {useContext} from "react";
-import {Context} from "./ContextMode";
+import React, {useContext, useEffect} from "react";
+import {useRecoilState} from "recoil";
+import {tBody, tHead} from "./state";
 
-export default function TBody() {
 
-    const context = useContext(Context);
+export default function THead() {
 
+    const [head, setHead] = useRecoilState(tHead);
     function checkedOnChange(e: React.ChangeEvent<HTMLInputElement>, index: number){
         const val = e.currentTarget.checked;
-        context.setTBody?.(prevState => {
+        setHead(prevState => {
             const temp = [...prevState];
-            temp[index].checked = val;
+            temp[index] = {...temp[index], checked: val}
             return temp;
         });
     }
 
-    return <tbody>
-
+    return <thead>
     {
-        context.tBody?.map((value, index) => <tr key={index}>
+        head.map((value, index) => <tr key={index}>
             <td>
                 <input type={'checkbox'} checked={value.checked} onChange={(e) => checkedOnChange(e, index)}/>
             </td>
@@ -26,5 +26,5 @@ export default function TBody() {
             </td>
         </tr>)
     }
-    </tbody>
+    </thead>
 }

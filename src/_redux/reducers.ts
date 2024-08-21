@@ -6,7 +6,7 @@ const initialState = {
 };
 
 type CHECKBOX_ACTION = {type:"THEAD_CHECKBOX"|"TBODY_CHECKBOX", payload: {index: number, checked: boolean}}
-type DATA_ADD_ACTION = {type:"THEAD"|"TBODY"}
+type DATA_ADD_ACTION = {type:"THEAD_ADD"|"TBODY_ADD"}
 
 export function rootReducer(state = initialState, action: CHECKBOX_ACTION|DATA_ADD_ACTION) {
     console.log(action)
@@ -24,9 +24,9 @@ export function rootReducer(state = initialState, action: CHECKBOX_ACTION|DATA_A
             console.log(newState);
             return newState;
         }
-        case "TBODY":
+        case "THEAD_ADD":
             return state;
-        case "THEAD":
+        case "TBODY_ADD":
             return state;
         default:
             return state;

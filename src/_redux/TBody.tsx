@@ -7,10 +7,6 @@ export default function TBody() {
     const tBodyData:DATA[] = useSelector(state=>state.tBody);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        console.log("TBody Effect")
-    }, []);
-
     function checkedOnChange(e: React.ChangeEvent<HTMLInputElement>, index: number){
         const val = e.currentTarget.checked;
         dispatch({type: "TBODY_CHECKBOX", payload: {index, checked: val}})

@@ -1,5 +1,7 @@
 import THead from "./THead";
 import TBody from "./TBody";
+import PureFooter from "./PureFooter";
+
 
 export default function Table() {
 
@@ -10,5 +12,6 @@ export default function Table() {
         </colgroup>
         <THead/>
         <TBody/>
+        <PureFooter/>
     </table>
 }

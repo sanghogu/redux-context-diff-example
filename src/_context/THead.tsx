@@ -1,15 +1,9 @@
 import React, {useContext, useEffect} from "react";
 import {Context} from "./ContextMode";
 
-let count = 0;
 export default function THead() {
 
     const context = useContext(Context);
-
-    useEffect(() => {
-        console.log("THead Effect")
-    }, []);
-    console.log(count++);
 
     function checkedOnChange(e: React.ChangeEvent<HTMLInputElement>, index: number){
         const val = e.currentTarget.checked;

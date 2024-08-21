@@ -6,17 +6,11 @@ type DATA = {
     name: string
 }
 
-let count = 0;
 export default function THead() {
 
     // @ts-ignore
     const tHeadData:DATA[] = useSelector(state=>state.tHead);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        console.log("THead Effect")
-    }, []);
-    console.log(count++);
 
     function checkedOnChange(e: React.ChangeEvent<HTMLInputElement>, index: number){
         const val = e.currentTarget.checked;

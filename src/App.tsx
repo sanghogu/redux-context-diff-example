@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ReduxMode from "./_redux/ReduxMode";
 import ContextMode from "./_context/ContextMode";
+import RecoilMode from "./_recoil/RecoilMode";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <ReduxMode/>
 
       <ContextMode/>
+
+      <RecoilMode/>
     </div>
   );
 }

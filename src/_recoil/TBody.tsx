@@ -1,23 +1,23 @@
-import React, {useContext} from "react";
-import {Context} from "./ContextMode";
+import React from "react";
+import {useRecoilState} from "recoil";
+import {tBody} from "./state";
 
 export default function TBody() {
 
-    const context = useContext(Context);
+    const [body, setBody] = useRecoilState(tBody);
 
     function checkedOnChange(e: React.ChangeEvent<HTMLInputElement>, index: number){
         const val = e.currentTarget.checked;
-        context.setTBody?.(prevState => {
+        setBody(prevState => {
             const temp = [...prevState];
-            temp[index].checked = val;
+            temp[index] = {...temp[index], checked: val}
             return temp;
         });
     }
 
     return <tbody>
-
     {
-        context.tBody?.map((value, index) => <tr key={index}>
+        body.map((value, index) => <tr key={index}>
             <td>
                 <input type={'checkbox'} checked={value.checked} onChange={(e) => checkedOnChange(e, index)}/>
             </td>
